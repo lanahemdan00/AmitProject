@@ -42,7 +42,8 @@ C_SRCS +=  \
 ../EEPROM.c \
 ../main.c \
 ../SSD.c \
-../SYS_OPER.c
+../SYS_OPER.c \
+../TIMER.c
 
 
 PREPROCESSING_SRCS += 
@@ -57,7 +58,8 @@ BUTTONS.o \
 EEPROM.o \
 main.o \
 SSD.o \
-SYS_OPER.o
+SYS_OPER.o \
+TIMER.o
 
 OBJS_AS_ARGS +=  \
 ADC.o \
@@ -65,7 +67,8 @@ BUTTONS.o \
 EEPROM.o \
 main.o \
 SSD.o \
-SYS_OPER.o
+SYS_OPER.o \
+TIMER.o
 
 C_DEPS +=  \
 ADC.d \
@@ -73,7 +76,8 @@ BUTTONS.d \
 EEPROM.d \
 main.d \
 SSD.d \
-SYS_OPER.d
+SYS_OPER.d \
+TIMER.d
 
 C_DEPS_AS_ARGS +=  \
 ADC.d \
@@ -81,7 +85,8 @@ BUTTONS.d \
 EEPROM.d \
 main.d \
 SSD.d \
-SYS_OPER.d
+SYS_OPER.d \
+TIMER.d
 
 OUTPUT_FILE_PATH +=Amit_Project.elf
 
@@ -133,6 +138,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./SYS_OPER.o: .././SYS_OPER.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32A  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32A__ -DNDEBUG  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./TIMER.o: .././TIMER.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega32A  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega32A__ -DNDEBUG  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -15,7 +15,7 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  .././SYS_OPER.h .././MACROS.h .././ADC.h .././BUTTONS.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
- .././SSD.h .././EEPROM.h
+ .././SSD.h .././TIMER.h .././EEPROM.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h:
 
@@ -56,5 +56,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
 
 .././SSD.h:
+
+.././TIMER.h:
 
 .././EEPROM.h:

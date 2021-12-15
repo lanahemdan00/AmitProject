@@ -15,6 +15,7 @@
 #include "ADC.h"
 #include "BUTTONS.h"
 #include "SSD.h"
+#include "TIMER.h"
 #include "EEPROM.h"
 
 #define OFF 0

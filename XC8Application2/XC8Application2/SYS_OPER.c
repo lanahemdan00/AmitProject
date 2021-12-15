@@ -16,6 +16,9 @@ void SYS_INITIAL(void){
 	clr_bit(PORTB,0);//LED
 	set_bit(DDRB,5);//COOL
 	set_bit(DDRB,4);//HEAT
+	timer0_init();
+	timer1_init();
+	timer1_INT_enable();
 	Curr_state = OFF;
 	
 	
